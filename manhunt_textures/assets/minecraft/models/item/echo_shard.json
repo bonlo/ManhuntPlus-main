@@ -1,0 +1,26 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/echo_shard"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "custom_model_data": 1
+            },
+            "model": "manhunt:item/throwing_hatchet"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 2
+            },
+            "model": "manhunt:item/explosion_wave"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 3
+            },
+            "model": "manhunt:item/deleo_icon"
+        }
+    ]
+}

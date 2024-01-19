@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"manhunt:engineer/scan/scan",
+        "manhunt:engineer/bacont/bacont",
+		"manhunt:engineer/snare/snare",
+		"manhunt:engineer/armor",
+		"origins:vegetarian"
+	],
+	"icon": {
+		"item": "minecraft:observer",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 2,
+	"name": "Engineer",
+	"description": "     [§dINTELLIGENCE ₪§r]\nThe Engineer excels at using their mechanical prowess to help it's teammates and ruin the plans of the runner."
+}

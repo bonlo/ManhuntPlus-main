@@ -1,0 +1,59 @@
+{
+	"type": "origins:multiple",
+	"activate": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:and",
+			"actions": [
+				{
+					"type": "origins:execute_command",
+					"command": "power grant @s manhunt:ritualist/wrath/wrath_effects"
+				},
+				{
+					"type": "origins:change_resource",
+					"resource": "manhunt:ritualist/sacrifice_souls",
+					"change": -14
+				}
+			]
+		},
+		"key": {
+			"key": "key.origins.secondary_active"
+		},
+		"condition": {
+			"type": "origins:resource",
+			"resource": "manhunt:ritualist/sacrifice_souls",
+			"comparison": "==",
+			"compare_to": 14
+		},
+		"cooldown": 1800,
+		"hud_render": {
+			"sprite_location": "origins:textures/gui/community/huang/resource_bar_02.png",
+			"bar_index": 5,
+			"should_render": true,
+			"condition": {
+				"type": "origins:power",
+				"power": "manhunt:ritualist/wrath/wrath_effects",
+				"inverted": true
+			}
+		}
+	},
+	"name": "Wrath",
+	"description": "Unleash your soul energy into an unstoppable wrath that makes you much stronger.",
+	"badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Wrath: +40% speed and +30% attack speed. Picking up souls now heals you. (+1 heart per soul)\nAdditionally, dealing more than 4 damage on a hit will make you invisible for a very brief delay."
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Unleash wrath with %s!"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "manhunt:textures/icons/cooldown.png",
+            "text": "Requires max amount of souls.\nCooldown: 1m and 30s."
+        }
+    ]
+}

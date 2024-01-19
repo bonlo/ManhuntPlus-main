@@ -1,0 +1,17 @@
+{
+    "flashbang": {
+      "sounds": [
+        "misc/flashbang"
+      ]
+    },
+    "amongus": {
+      "sounds": [
+        "misc/amongus"
+      ]
+    },
+    "bonk": {
+      "sounds": [
+        "misc/bonk"
+      ]
+    }
+  }

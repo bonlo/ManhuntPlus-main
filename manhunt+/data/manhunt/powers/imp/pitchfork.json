@@ -1,0 +1,473 @@
+{
+    "type": "origins:multiple",
+    "craft1": {
+        "type": "origins:action_on_callback",
+        "entity_action_added": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "recipe give @s manhunt:flint_trident",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s manhunt:imp/pitchfork_craft1"
+                }
+            ]
+        }
+    },
+    "craft2": {
+        "type": "origins:modify_crafting",
+        "recipe": "manhunt:flint_trident",
+        "result": {
+            "item": "minecraft:trident",
+            "tag": "{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:4,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Dull Flint.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:1}],HideFlags:3}"
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "recipe take @s manhunt:flint_trident"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s manhunt:imp/pitchfork_craft2"
+                }
+            ]
+        }
+    },
+    "damage_projectile": {
+        "type": "origins:modify_projectile_damage",
+        "damage_condition": {
+            "type": "origins:projectile",
+            "projectile": "minecraft:trident"
+        },
+        "modifier": {
+            "operation": "addition",
+            "value": -3
+        }
+    },
+    "levels": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "iron": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:nbt",
+            "nbt": "{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:4,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Dull Flint.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:1}],HideFlags:3}"
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:iron_ingot"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "give @s trident{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:6,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Sharpened Iron.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:1}],HideFlags:3} 1",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s manhunt:imp/pitchfork_levels 1",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "dia": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:nbt",
+            "nbt": "{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:6,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Sharpened Iron.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:1}],HideFlags:3}"
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:diamond"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "give @s trident{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:8,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆☆☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Diamond Perfection.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:2}],HideFlags:3} 1",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s manhunt:imp/pitchfork_levels 2",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "netherite": {
+        "type": "origins:item_on_item",
+        "on_item_condition": {
+            "type": "origins:nbt",
+            "nbt": "{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:8,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆☆☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Diamond Perfection.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:2}],HideFlags:3}"
+        },
+        "using_item_condition": {
+            "type": "origins:ingredient",
+            "ingredient": {
+                "item": "minecraft:netherite_scrap"
+            }
+        },
+        "using_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "on_item_action": {
+            "type": "origins:consume",
+            "amount": 1
+        },
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "give @s trident{Unbreakable:1,AttributeModifiers:[{AttributeName:\"generic.attack_damage\",Amount:10,Name:\"generic.attack_damage\",UUID:[I;-12241,37572,231927,-75144]},{AttributeName:\"generic.attack_speed\",Amount:-2.9,Name:\"generic.attack_speed\",UUID:[I;-122416,19396,185458,-38792]}],display:{Name:'[{\"text\":\"Ol\\'reliable ☆☆☆☆\",\"bold\":true,\"color\":\"dark_red\"}]',Lore:['[{\"text\":\"Netherite Fright.\",\"italic\":false,\"color\":\"red\"}]']},Enchantments:[{id:vanishing_curse,lvl:1},{id:loyalty,lvl:3}],HideFlags:3} 1",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "resource set @s manhunt:imp/pitchfork_levels 3",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "activate": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "manhunt:imp/pitchfork_teleport",
+                    "change": 1
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:item.trident.thunder player @a ~ ~ ~ 1 2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "particle minecraft:dragon_breath ~ ~1 ~ 0.3 0 0.3 0.01 100",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "key": {
+            "key": "key.origins.primary_active",
+            "continuous": false
+        },
+        "cooldown": 1800,
+        "hud_render": {
+            "should_render": true,
+            "bar_index": 15,
+            "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_02.png"
+        },
+        "condition": {
+            "type": "origins:using_item",
+            "item_condition": {
+                "type": "origins:ingredient",
+                "ingredient": {
+                    "item": "minecraft:trident"
+                }
+            }
+        }
+    },
+    "teleport": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "incarnated": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "invis":{
+        "type": "origins:invisibility",
+        "render_armor": false,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "manhunt:imp/pitchfork_incarnated",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "particles":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:execute_command",
+            "command": "execute on vehicle run particle minecraft:dust_color_transition 0.5 0 0.7 1 0.7 0 0.9 ~ ~ ~ 0.5 0.5 0.5 0 10",
+            "permission_level": 4
+        },
+        "interval": 2,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "manhunt:imp/pitchfork_incarnated",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "trident": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "manhunt:imp/pitchfork_incarnated",
+                    "change": -1
+                },
+                {
+                    "type": "origins:dismount"
+                }
+            ]
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:riding",
+            "bientity_condition": {
+                "type": "origins:target_condition",
+                "condition": {
+                    "type": "origins:and",
+                    "conditions": [
+                        {
+                            "type": "origins:entity_type",
+                            "entity_type": "minecraft:trident"
+                        },
+                        {
+                            "type": "origins:nbt",
+                            "nbt": "{inGround:1b}"
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "tag": {
+        "type": "apugli:projectile_action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:mount"
+                },
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "manhunt:imp/pitchfork_teleport",
+                                "change": -1
+                            },
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "manhunt:imp/pitchfork_incarnated",
+                                "change": 1
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 1,
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:entity_type",
+                        "entity_type": "minecraft:trident"
+                    }
+                },
+                {
+                    "type": "origins:distance",
+                    "comparison": "<=",
+                    "compare_to": 2
+                },
+                {
+                    "type": "origins:actor_condition",
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "manhunt:imp/pitchfork_teleport",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                }
+            ]
+        }
+    },
+    "flint_projectile_dmg": {
+        "type": "origins:modify_projectile_damage",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:projectile",
+                    "projectile": "minecraft:trident"
+                },
+                {
+                    "type": "origins:attacker",
+                    "entity_condition": {
+                        "type": "origins:resource",
+                        "resource": "manhunt:imp/pitchfork_levels",
+                        "comparison": "==",
+                        "compare_to": 1
+                    }
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "addition",
+            "value": -4.0
+        }
+    },
+    "diamond_projectile_dmg": {
+        "type": "origins:modify_projectile_damage",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:projectile",
+                    "projectile": "minecraft:trident"
+                },
+                {
+                    "type": "origins:attacker",
+                    "entity_condition": {
+                        "type": "origins:resource",
+                        "resource": "manhunt:imp/pitchfork_levels",
+                        "comparison": "==",
+                        "compare_to": 2
+                    }
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "addition",
+            "value": 3.0
+        }
+    },
+    "netherite_projectile_dmg": {
+        "type": "origins:modify_projectile_damage",
+        "damage_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:projectile",
+                    "projectile": "minecraft:trident"
+                },
+                {
+                    "type": "origins:attacker",
+                    "entity_condition": {
+                        "type": "origins:resource",
+                        "resource": "manhunt:imp/pitchfork_levels",
+                        "comparison": "==",
+                        "compare_to": 3
+                    }
+                }
+            ]
+        },
+        "modifier": {
+            "operation": "addition",
+            "value": 5.0
+        }
+    },
+    "scoreboard": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:execute_command",
+            "command": "scoreboard objectives add trident minecraft.used:minecraft.trident"
+        },
+        "entity_action_respawned": {
+            "type": "origins:execute_command",
+            "command": "resource set @s manhunt:imp/pitchfork_levels 0",
+            "permission_level": 4
+        },
+        "execute_chosen_when_orb": true,
+        "hidden": true
+    },
+    "name": "Imp's Recipe",
+    "description": "Craft a trident by putting a flint, and two sticks underneath in a crafting table's grid. This pitchfork can be upgraded with resources and be incarnated. (see badges)",
+    "badges": [
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Whilst holding your trident, press %s to incarnate your next trident throw!"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "To upgrade, simply right click with the material while hovering on the trident in your inventory.\n§7Iron Upgrade: 1 Iron Ingot\n§3Diamond Upgrade: 1 Diamond\n§6Netherite Upgrade: 1 Netherite Scrap§r\nUpgrades increase the damage of the trident."
+        },
+        {
+            "type": "origins:crafting_recipe",
+            "sprite": "minecraft:textures/item/trident.png",
+            "recipe": {
+                "id": "manhunt:flint_trident",
+                "type": "minecraft:crafting_shaped",
+                "key": {
+                    "X": {
+                        "item": "minecraft:flint"
+                    },
+                    "#": {
+                        "item": "minecraft:stick"
+                    }
+                },
+                "pattern": [
+                    " X ",
+                    " # ",
+                    " # "
+                ],
+                "result": {
+                    "item": "minecraft:trident"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "type":"origins:multiple",
+
+    "permanent":{
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.5
+        }
+    },
+    "damage":{
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:damage",
+            "amount": 2,
+            "source": {
+                "name": "magic",
+                "bypasses_armor": true
+            }
+        },
+        "interval": 30,
+        "condition": {
+            "type": "origins:fluid_height",
+            "fluid": "minecraft:water",
+            "comparison": ">=",
+            "compare_to": 1
+        }
+    },
+    "name": "Dripless Drip.",
+    "description": "You don't want your drip to get drenched. And the Devil agrees with you.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Drenched: 1 §cdamage§r per 1.5s + §cSlowness§r I"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "order": 1,
+  "replace": true,
+  "origins": [
+    "manhunt:hunter",
+    "manhunt:runner",
+    "manhunt:spectator",
+    "manhunt:start"
+  ],
+  "default_origin": "manhunt:start",
+  "name":"role"
+}

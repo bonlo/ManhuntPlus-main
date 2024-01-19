@@ -1,0 +1,19 @@
+{
+    "type": "origins:multiple",
+    "bad_regen": {
+        "type": "origins:modify_healing",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": -0.75
+        }
+    },
+    "name": "Feeble",
+    "description": "You initially learned alchemy to rejuvenate your dying and feeble body.\nWithout them, your body struggles.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Feeble: -75% natural regeneration. To heal, it is suggested to drink your regular concoctions."
+        }
+    ]
+}

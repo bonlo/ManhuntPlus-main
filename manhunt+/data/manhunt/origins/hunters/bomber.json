@@ -1,0 +1,19 @@
+{
+	"powers": [
+		"manhunt:bomber/kamikaze",
+		"manhunt:bomber/flash/flash",
+		"manhunt:bomber/boom/boom",
+		"manhunt:bomber/heavy",
+		"manhunt:bomber/loud",
+		"manhunt:bomber/explode_armor",
+		"manhunt:bomber/break_speed"
+	],
+	"icon": {
+		"item": "minecraft:tnt",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 2,
+	"name": "Bomber",
+	"description": "      [§bPACEKEEPER ╬§r]\nABSOLUTE CRACKHEAD. With explosive powers, you will wonder if they're by your side or not."
+}

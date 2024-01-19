@@ -1,0 +1,17 @@
+{
+	"powers": [
+		"manhunt:celeritas/boots/boots",
+		"manhunt:celeritas/boots/dash",
+		"manhunt:celeritas/checkpoint/checkpoint",
+		"manhunt:celeritas/more_adrenaline",
+		"manhunt:celeritas/frames"
+	],
+	"icon": {
+		"item": "minecraft:diamond_boots",
+		"tag": "{Enchantments:[{}],CustomModelData:1}"
+	},
+	"order": 10,
+	"impact": 1,
+	"name": "Celeritas ⋙",
+	"description": "The Celeritas excels at one thing; Speed. But exceling at one thing might come with it's downsides."
+}

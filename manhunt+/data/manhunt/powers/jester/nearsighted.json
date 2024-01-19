@@ -1,0 +1,35 @@
+{
+    "type": "origins:multiple",
+    "sight": {
+        "type": "origins:prevent_entity_render",
+        "bientity_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:distance",
+                    "comparison": ">",
+                    "compare_to": 32
+                },
+                {
+                    "type": "origins:target_condition",
+                    "condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:origin",
+                                "origin": "manhunt:runner",
+                                "layer": "origins:origin",
+                                "inverted": true
+                            },
+                            {
+                                "type": "origins:living"
+                            }                            
+                        ]
+                    }
+                }
+            ]
+        }
+    },
+    "name": "Nearsighted",
+    "description": "You can only see entities that are at most 32 blocks away from you."
+}

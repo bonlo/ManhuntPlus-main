@@ -1,0 +1,120 @@
+{
+    "type": "origins:multiple",
+    "tag": {
+        "type": "origins:action_on_callback",
+        "entity_action_gained": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s add runner"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute store result score @s runners run execute if entity @a[tag=runner]"
+                }
+            ]
+        },
+        "entity_action_lost": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "tag @s remove runner"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute as @a[tag=runner] if score @s runners > @p runners run scoreboard players remove @s runners 1"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players reset @s runners"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "scoreboard players reset @s tracking"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute in minecraft:overworld kill @e[limit=1,sort=nearest,type=item,tag=tracking1]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute in minecraft:the_nether run kill @e[limit=1,sort=nearest,type=item,tag=tracking2]"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "execute in minecraft:the_end run kill @e[limit=1,sort=nearest,type=item,tag=tracking3]"
+                }
+            ]
+        },
+        "entity_action_respawned": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "origin set @s origins:origin manhunt:spectator"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "origin set @s origins:runners origins:empty"
+                }
+            ]
+        },
+        "execute_chosen_when_orb": true
+    },
+
+    "compass2": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function manhunt:nether"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s manhunt:runner_effects_compass2"
+                }
+            ]
+        },
+        "interval": 5,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_nether"
+                }
+            ]
+        }
+    },
+    "compass3": {
+        "type": "origins:action_over_time",
+        "rising_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:execute_command",
+                    "command": "function manhunt:end"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "power remove @s manhunt:runner_effects_compass3"
+                }
+            ]
+        },
+        "interval": 5,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:dimension",
+                    "dimension": "minecraft:the_end"
+                }
+            ]
+        }
+    },
+    "hidden": true
+}

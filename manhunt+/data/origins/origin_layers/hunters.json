@@ -1,0 +1,32 @@
+{
+    "order": 2,
+    "replace": false,
+    "allow_random": true,
+    "origins": [
+          {
+            "condition": {
+              "type": "origins:origin",
+              "origin": "manhunt:hunter",
+              "layer": "origins:origin"
+          },
+              "origins": [
+                "manhunt:none",
+                "manhunt:hunters/lurker",
+                "manhunt:hunters/herald",
+                "manhunt:hunters/scout",
+                "manhunt:hunters/bomber",
+                "manhunt:hunters/survivalist",
+                "manhunt:hunters/guardian",
+                "manhunt:hunters/imp",
+                "manhunt:hunters/captain",
+                "manhunt:hunters/engineer",
+                "manhunt:hunters/ritualist",
+                "manhunt:hunters/berserker",
+                "manhunt:hunters/shaman"
+              ]
+          }
+      ],
+      "default_origin": "manhunt:none",
+      "name": "hunter"
+}
+  

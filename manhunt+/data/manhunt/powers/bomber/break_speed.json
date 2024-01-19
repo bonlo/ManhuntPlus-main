@@ -1,0 +1,14 @@
+{
+    "type": "origins:modify_break_speed",
+    "modifier": {
+        "operation": "multiply_total",
+        "value": -0.5
+    },
+    "block_condition": {
+        "type": "origins:hardness",
+        "comparison": ">=",
+        "compare_to": 1
+    },
+    "name": "Flailing Arms",
+    "description": "You aren't so good at breaking blocks. (50% less mining speed)"
+}

@@ -1,0 +1,38 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/ender_eye"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "custom_model_data": 1
+            },
+            "model": "manhunt:item/flashbang"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 2
+            },
+            "model": "manhunt:item/lurker_eye"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 3
+            },
+            "model": "manhunt:item/jester_paranoia"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 4
+            },
+            "model": "manhunt:item/jester_paranoia2"
+        },
+        {
+            "predicate": {
+                "custom_model_data": 99
+            },
+            "model": "manhunt:item/dude_getting_flashbanged_like_3_times"
+        }
+    ]
+}

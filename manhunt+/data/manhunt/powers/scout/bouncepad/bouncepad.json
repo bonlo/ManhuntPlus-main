@@ -1,0 +1,77 @@
+{
+    "type": "origins:multiple",
+    "perform": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:fire_projectile",
+                    "entity_type": "minecraft:armor_stand",
+                    "divergence": 0,
+                    "count": 1,
+                    "speed": 2,
+                    "tag": "{Invisible:1b,Invulnerable:1b,Tags:[\"bouncepad\"],DisabledSlots:4144959,Passengers:[{id:\"minecraft:item_display\",Tags:[\"bouncepad\"],transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[1f,0f,0f,1f],translation:[0f,-1.4f,0f],scale:[1.7f,1.4f,1.7f]},item:{id:\"minecraft:slime_ball\",Count:1b,tag:{CustomModelData:1}}}]}",
+                    "projectile_action":{
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:execute_command",
+                                "command": "scale set pehkui:width 6",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "power grant @s manhunt:scout/bouncepad/bouncepad_effects",
+                                "permission_level": 4
+                            },
+                            {
+                                "type": "origins:execute_command",
+                                "command": "execute on passengers run data modify entity @s Rotation[1] set value 0f",
+                                "permission_level": 4
+                            }
+                        ]
+                    }
+                },
+                {
+                    "type": "origins:swing_hand",
+                    "hand": "MAIN_HAND"
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:item.armor.equip_chain player @a ~ ~ ~ 2 2",
+                    "permission_level": 4
+                }
+            ]
+        },
+        "cooldown": 1200,
+        "hud_render": {
+			"should_render": true,
+			"sprite_location": "manhunt:textures/bars1.png",
+			"bar_index": 2
+		},
+        "key": {
+            "key": "key.origins.secondary_active",
+            "continuous": false
+        }
+    },
+    "name": "Bouncepad",
+    "description": "Deploy a launchpad to propel your team to victory.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "Bouncepad: Launches players forward.\n(Bouncepads last for 15 seconds.)\nAdditionally, using the bouncepad will negate the next instance of fall damage."
+        },
+        {
+            "type": "origins:keybind",
+            "sprite": "origins:textures/gui/badge/toggle.png",
+            "text": "Deploy with %s!"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "manhunt:textures/icons/cooldown.png",
+            "text": "Cooldown: 1m"
+        }
+    ]
+}

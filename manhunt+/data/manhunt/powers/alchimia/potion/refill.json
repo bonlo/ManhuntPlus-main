@@ -1,0 +1,131 @@
+{
+    "type": "origins:multiple",
+    "start_pots":{
+        "type": "origins:action_on_callback",
+        "entity_action_gained":{
+            "type": "origins:give",
+            "stack": {
+                "item": "minecraft:potion",
+                "amount": 3,
+                "tag": "{CustomPotionColor:9004728,display:{Name:'[\"\",{\"text\":\"Alchimia\\'s Concoction\",\"italic\":false,\"color\":\"dark_purple\",\"bold\":true}]'},Enchantments:[{}],CustomModelData:1,Tags:alchimia}"
+            }
+        },
+        "entity_action_lost": {
+            "type": "origins:execute_command",
+            "command": "clear @s minecraft:potion"
+        },
+        "execute_chosen_when_orb": false
+    },
+    "cooldown": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 45,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        },
+        "max_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:give",
+                    "stack": {
+                        "item": "minecraft:potion",
+                        "tag": "{CustomPotionColor:9004728,display:{Name:'[\"\",{\"text\":\"Alchimia\\'s Concoction\",\"italic\":false,\"color\":\"dark_purple\",\"bold\":true}]'},Enchantments:[{}],CustomModelData:1,Tags:alchimia}"
+                    }
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "manhunt:alchimia/potion/refill_cooldown",
+                    "change": -45
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.allay.item_thrown player @s ~ ~ ~ 3 2",
+                    "permission_level": 4
+                },
+                {
+                    "type": "origins:execute_command",
+                    "command": "playsound minecraft:entity.elder_guardian.curse player @s ~ ~ ~ 0.1 2",
+                    "permission_level": 4
+                }
+            ]
+        }
+    },
+    "cooldown_up": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "manhunt:alchimia/potion/refill_cooldown",
+            "change": 1
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:inventory",
+                    "process_mode": "items",
+                    "item_condition": {
+                        "type": "origins:and",
+                        "conditions": [
+                            {
+                                "type": "origins:ingredient",
+                                "ingredient": {
+                                    "item": "minecraft:potion"
+                                }
+                            },
+                            {
+                                "type": "origins:or",
+                                "conditions": [
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{CustomPotionColor:9004728,display:{Name:'[\"\",{\"text\":\"Alchimia\\'s Concoction\",\"italic\":false,\"color\":\"dark_purple\",\"bold\":true}]'},Enchantments:[{}],CustomModelData:1,Tags:alchimia}"
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{CustomPotionColor:13061821,display:{Name:'[\"\",{\"text\":\"Alchimia\\'s Volatile Mixture\",\"italic\":false,\"color\":\"light_purple\",\"bold\":true}]'},Enchantments:[{}],CustomModelData:2,Tags:alchimia}"
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{CustomPotionColor:16706109,display:{Name:'[\"\",{\"text\":\"Alchimia\\'s Awakened Eyes\",\"italic\":false,\"color\":\"yellow\",\"bold\":true}]'},Enchantments:[{}],CustomModelData:1,Tags:alchimia}"
+                                    },
+                                    {
+                                        "type": "origins:nbt",
+                                        "nbt": "{CustomPotionColor:11546150,display:{Name:'[\"\",{\"text\":\"Alchimia\\'s Boiling Strength\",\"italic\":false,\"color\":\"dark_red\",\"bold\":true}]'},Enchantments:[{}],CustomModelData:1,Tags:alchimia}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "comparison": "<",
+                    "compare_to": 5
+                },
+                {
+                    "type": "origins:power",
+                    "power": "manhunt:start",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "name": "Alchemical Expert",
+    "description": "Your prowess for potion-making grants you the supernatural power to generate special concoctions.",
+    "badges": [
+        {
+            "type": "origins:tooltip",
+            "sprite": "origins:textures/gui/badge/star.png",
+            "text": "You naturally generate special concoctions every 45 seconds.\nUsing those, you can craft extra potions with different materials! (See other badges)"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/mob_effect/strength.png",
+            "text": "Using §6blaze powder§r you can make a strength potion. \n(+2 damage for 10 seconds)"
+        },
+        {
+            "type": "origins:tooltip",
+            "sprite": "minecraft:textures/mob_effect/glowing.png",
+            "text": "Using §eglow berries§r you can make a glowing eyes potion. \n(See hunters through surfaces in a 24 block radius)"
+        }
+    ]
+}
